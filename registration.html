@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    body {
+      background-image: url("restro.jpg");
+      background-attachment:fixed;
+      background-size:cover;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+    
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="email"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+      font-weight: bold;
+    }
+    
+    input[type="submit"]:hover {
+      background-image: linear-gradient(90deg, #B799FF 0%, #ACBCFF 50%, #AEE2FF 75%, #E6FFFD 100%);
+      color: black;
+      animation: slide 10s linear infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registration Form</h2>
+    <form method="POST" action="register.php" >
+      <div class="form-group">
+        <label><b>Username:</b></label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label><b>Password:</b></label>
+        <input type="password" id="password" name="pwd" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$" title="Password should contain at least 8 characters, including one uppercase letter, one lowercase letter, one digit, and one special character (!@#$%^&*)." required>
+      </div>
+      <div class="form-group">
+        <label><b>Confirm Password:</b></label>
+        <input type="password" id="confirm-password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$" title="password and confirm password must be same." required>
+      </div>
+      <div class="form-group">
+        <label><b>Mobile Number:</b></label>
+        <input type="tel" id="mno" name="mno" pattern="[0-9]{10}" title="Mobile number should be a 10-digit number" required>
+      </div>
+      <div class="form-group">
+        <label><b>Email:</b></label>
+        <input type="email" id="email" name="email" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" title="enter valid mail" required>
+      </div>
+      <input type="submit" value="Submit" >
+
+        <script>
+     //   var username = document.getElementById("username").value;
+      //  var email = document.getElementById("email").value;
+    
+      //  localStorage.setItem("username", username);
+      //  localStorage.setItem("email", email);
+     // </script>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+  color: #f62323;
+  font-size: 30px;
+  font-weight: bold;
+}
+.reserve{
+    margin: 0 auto;
+    width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+  margin-top: 20px;
+  font-weight: bold;
+}
+body{
+  background-image: url("bg3.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[type="tel"],
+input[type="email"] {
+  width: 200px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #070707;
+}
+
+.btn {
+ width: 6.5em;
+ height: 2.3em;
+ margin: 0.5em;
+ background: black;
+ color: white;
+ border: none;
+ border-radius: 0.625em;
+ font-size: 20px;
+ font-weight: bold;
+ cursor: pointer;
+ position: relative;
+ z-index: 1;
+ overflow: hidden;
+}
+
+button:hover {
+ color: black;
+}
+
+button:after {
+ content: "";
+ background: white;
+ position: absolute;
+ z-index: -1;
+ left: -20%;
+ right: -20%;
+ top: 0;
+ bottom: 0;
+ transform: skewX(-45deg) scale(0, 1);
+ transition: all 0.5s;
+}
+
+button:hover:after {
+ transform: skewX(-45deg) scale(1, 1);
+ -webkit-transition: all 0.5s;
+ transition: all 0.5s;
+}
+
+</style>
+   <script>
+function Booksrc() 
+{ 
+  function getSystemTime() {
+  var now = new Date();
+  var time = now.toLocaleString();
+  return time;
+}
+
+function showAlert() {
+  var time = getSystemTime();
+  alert(" Thank you for reserving........\nyour reservation done at: " + time);
+  document.getElementById("display").innerHTML = "Reservation for " + storedGuests + " guests on " + storedDate + " at " + storedTime + " is confirmed for " + storedName + ".";
+
+}
+
+  
+}
+
+</script>
+</head>
+<body><form method="post" action="reservation.php">
+<center>
+  <div class="reserve">
+    
+  <b><h1>&#x1F374;Restaurant Reservation</h1></b>
+  
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="time">Time:</label>
+    <input type="time" id="time" name="time" required>
+
+    <label for="guests">Number of Guests:</label>
+    <input type="number" id="guests" name="guests"  min="1" max="20" required>
+
+    <label for="hotel">select your Restaurant</label>
+    <select id="hotel" name="hotel">
+      <option>select here</option>
+      <option>platform 65</option>
+      <option>pista house</option>
+      <option>paradise</option>
+      <option>airportbawachi</option>
+      <option>Subbayyagarihotel</option>
+
+    </select>
+  
+    <label>phone number</label>
+    <input type="tel"  id="mno" name="mno" ><br>
+
+   <label>Email</label>
+   <input type="email" id="email" name="email" ><br><br>
+
+ <button class="btn" onClick="Booksrc()">reserve</button>
+   <br><br>
+
+
+  <p id="res"></p>
+</div>
+  </ceneter>
+</form>
+</body>
+</html>
